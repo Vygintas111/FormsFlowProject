@@ -1,23 +1,22 @@
-# Stage 1: Build
-FROM node:18-alpine
+FROM node:18-alpine as builder
 
 WORKDIR /app
 
-# Install yarn
-RUN apk add --no-cache yarn
-
-# Copy package files and install dependencies
+# Copy package.json first
 COPY package.json ./
-RUN yarn install
 
-# Copy the rest of the application code and build it
+# Install dependencies using npm
+RUN npm install
+
+# Copy the rest of the application code
 COPY . .
-RUN yarn build
 
-# Stage 2: Serve with nginx
+# Build the application
+RUN npm run build
+
+# Use nginx to serve the built files
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
-
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
