@@ -26,17 +26,17 @@ const Login: React.FC = () => {
     return (
         <div className="row justify-content-center">
             <div className="col-md-6">
-                <h2>{t("Login")}</h2>
+                <h2>{t("login")}</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label className="form-label">{t("Username")}</label>
+                        <label className="form-label">{t("username")}</label>
                         <input value={username} onChange={e => setUsername(e.target.value)} className="form-control" required />
                     </div>
                     <div className="mb-3">
-                        <label className="form-label">{t("Password")}</label>
+                        <label className="form-label">{t("password") || "Password"}</label>
                         <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" required />
                     </div>
-                    <button type="submit" className="btn btn-primary">{t("Login")}</button>
+                    <button type="submit" className="btn btn-primary">{t("login")}</button>
                 </form>
             </div>
         </div>

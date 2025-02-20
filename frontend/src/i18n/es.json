@@ -1,9 +1,10 @@
 {
-  "welcome": "Bienvenido a Forms App",
+  "welcomeTo": "Bienvenido a",
   "login": "Iniciar sesión",
   "register": "Registrarse",
   "dashboard": "Panel",
   "logout": "Cerrar sesión",
-  "changeTheme": "Cambiar Tema",
-  "changeLanguage": "Cambiar Idioma"
+  "changeTheme": "Cambiar tema",
+  "username": "Nombre de usuario",
+  "password": "Contraseña"
 }

@@ -26,11 +26,16 @@ const Layout: React.FC = () => {
         localStorage.setItem("language", lang);
     };
 
+    const navbarStyle =
+        theme === "dark"
+            ? { backgroundColor: "#1b1e21" }  // slightly darker dark
+            : { backgroundColor: "#dcdcdc" }; // slightly darker light
+
     return (
         <>
-            <nav className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark bg-dark" : "navbar-light bg-light"} align-items-center`}>
+            <nav style={navbarStyle} className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark" : "navbar-light"} align-items-center`}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">FormsFlow</Link>
+                    <Link className="navbar-brand" to="/">{t("welcomeTo")} FormFlow</Link>
                     <div className="collapse navbar-collapse justify-content-end">
                         <ul className="navbar-nav align-items-center">
                             {user ? (
