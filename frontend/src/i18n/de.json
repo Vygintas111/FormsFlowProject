@@ -1,0 +1,9 @@
+{
+  "welcome": "Willkommen bei FormsFlow",
+  "login": "Anmelden",
+  "register": "Registrieren",
+  "dashboard": "Dashboard",
+  "logout": "Abmelden",
+  "changeTheme": "Design ändern",
+  "changeLanguage": "Sprache ändern"
+}

@@ -28,31 +28,15 @@ const Layout: React.FC = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark bg-dark" : "navbar-light bg-light"} align-items-center`}>
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">FormsFlow</Link>
                     <div className="collapse navbar-collapse justify-content-end">
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav align-items-center">
                             {user ? (
                                 <>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/dashboard">{t("dashboard")}</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <button onClick={toggleTheme} className="btn btn-sm btn-outline-secondary me-2">
-                                            {t("changeTheme")}
-                                        </button>
-                                    </li>
-                                    <li className="nav-item">
-                                        <select
-                                            onChange={handleLanguageChange}
-                                            value={i18n.language}
-                                            className="form-select form-select-sm"
-                                            style={{ width: "auto" }}
-                                        >
-                                            <option value="en">English</option>
-                                            <option value="es">Español</option>
-                                        </select>
                                     </li>
                                 </>
                             ) : (
@@ -63,24 +47,25 @@ const Layout: React.FC = () => {
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/register">{t("register")}</Link>
                                     </li>
-                                    <li className="nav-item">
-                                        <button onClick={toggleTheme} className="btn btn-sm btn-outline-secondary me-2">
-                                            {t("changeTheme")}
-                                        </button>
-                                    </li>
-                                    <li className="nav-item">
-                                        <select
-                                            onChange={handleLanguageChange}
-                                            value={i18n.language}
-                                            className="form-select form-select-sm"
-                                            style={{ width: "auto" }}
-                                        >
-                                            <option value="en">English</option>
-                                            <option value="es">Español</option>
-                                        </select>
-                                    </li>
                                 </>
                             )}
+                            <li className="nav-item ms-2">
+                                <button onClick={toggleTheme} className="btn btn-sm btn-outline-secondary">
+                                    {t("changeTheme")}
+                                </button>
+                            </li>
+                            <li className="nav-item ms-2">
+                                <select
+                                    onChange={handleLanguageChange}
+                                    value={i18n.language}
+                                    className="form-select form-select-sm"
+                                    style={{ width: "auto" }}
+                                >
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="de">Deutsch</option>
+                                </select>
+                            </li>
                         </ul>
                     </div>
                 </div>
