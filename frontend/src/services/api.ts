@@ -1,6 +1,6 @@
 const API_URL = import.meta.env.VITE_API_URL
-    ? `https://${import.meta.env.VITE_API_URL}`
-    : "https://formsflowproject-backend";
+    ? `${import.meta.env.VITE_API_URL}`
+    : "https://formflowproject-backend";
 
 export const api = async (endpoint: string, method = "GET", data?: any, token?: string) => {
     const config: RequestInit = {
