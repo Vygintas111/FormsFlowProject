@@ -1,0 +1,9 @@
+{
+  "welcome": "Welcome to Forms App",
+  "login": "Login",
+  "register": "Register",
+  "dashboard": "Dashboard",
+  "logout": "Logout",
+  "changeTheme": "Change Theme",
+  "changeLanguage": "Change Language"
+}
