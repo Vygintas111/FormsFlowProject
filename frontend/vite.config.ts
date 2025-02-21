@@ -7,7 +7,7 @@ export default defineConfig({
     port: 6005,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'https://formflow-backend',
+        target: process.env.VITE_API_URL || 'https://formflow-backend.up.railway.app',
         changeOrigin: true,
       }
     }
