@@ -5,6 +5,6 @@
   "dashboard": "Dashboard",
   "logout": "Logout",
   "changeTheme": "Change Theme",
-  "password": "Password",
-  "username": "Username"
+  "username": "Username",
+  "password": "Password"
 }

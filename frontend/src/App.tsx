@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
-import "./i18n"; // initialize i18n
+import "./i18n";
 
 const App: React.FC = () => (
     <BrowserRouter>
