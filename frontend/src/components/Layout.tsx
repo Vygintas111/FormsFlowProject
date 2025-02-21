@@ -35,7 +35,7 @@ const Layout: React.FC = () => {
         <>
             <nav style={navbarStyle} className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark" : "navbar-light"} align-items-center`}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">{t("welcomeTo")} FormFlow</Link>
+                    <Link className="navbar-brand" to="/">FormFlow</Link>
                     <div className="collapse navbar-collapse justify-content-end">
                         <ul className="navbar-nav align-items-center">
                             {user ? (
