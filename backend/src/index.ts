@@ -16,10 +16,14 @@ app.use(cors({
     origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    optionsSuccessStatus: 200,
+    credentials: true
 }));
 
-app.options("*", cors());
+app.options("*", cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
@@ -31,7 +35,11 @@ app.get("/api/health", (_req: Request, res: Response): void => {
 AppDataSource.initialize()
     .then(() => {
         const httpServer = createServer(app);
-        const io = new SocketIOServer(httpServer, { cors: { origin: "*" } });
+        const io = new SocketIOServer(httpServer, {
+            cors: {
+                origin: allowedOrigins,
+            }
+        });
         io.on("connection", socket => {
             console.log("Socket connected:", socket.id);
         });
