@@ -11,7 +11,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 6004;
 
-app.use(cors());
+const allowedOrigins = ["https://formflow.up.railway.app"];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

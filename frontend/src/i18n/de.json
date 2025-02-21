@@ -6,5 +6,8 @@
   "logout": "Abmelden",
   "changeTheme": "Design ändern",
   "username": "Benutzername",
-  "password": "Passwort"
+  "password": "Passwort",
+  "email": "E-Mail",
+  "notRegistered": "Noch nicht registriert?",
+  "alreadyRegistered": "Bereits registriert?"
 }

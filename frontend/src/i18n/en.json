@@ -6,5 +6,8 @@
   "logout": "Logout",
   "changeTheme": "Change Theme",
   "username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "email": "Email",
+  "notRegistered": "Not registered yet?",
+  "alreadyRegistered": "Already registered?"
 }

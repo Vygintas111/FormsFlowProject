@@ -6,5 +6,8 @@
   "logout": "Cerrar sesión",
   "changeTheme": "Cambiar tema",
   "username": "Nombre de usuario",
-  "password": "Contraseña"
+  "password": "Contraseña",
+  "email": "Correo electrónico",
+  "notRegistered": "¿Aún no estás registrado?",
+  "alreadyRegistered": "¿Ya estás registrado?"
 }
