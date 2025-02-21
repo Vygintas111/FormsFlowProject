@@ -1,5 +1,5 @@
+import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AppDataSource } from "./config/ormconfig";
 import authRoutes from "./routes/authRoutes";
@@ -24,8 +24,18 @@ const corsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-app.use(cors(corsOptions));
+app.use((req: Request, res: Response, next: NextFunction): void => {
+    res.header("Access-Control-Allow-Origin", "https://formflow.up.railway.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === "OPTIONS") {
+        res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.status(200).json({});
+        return;
+    }
+    next();
+});
 
+app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
 app.use(express.json());
