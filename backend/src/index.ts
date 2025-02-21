@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -11,12 +10,18 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 6004;
 
-app.use(cors({
-    origin: "https://formflow-backend.up.railway.app",
-    credentials: true
-}));
-app.use(express.json());
+const allowedOrigins = ["https://formflow.up.railway.app"];
 
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    optionsSuccessStatus: 200,
+}));
+
+app.options("*", cors());
+
+app.use(express.json());
 app.use("/api/auth", authRoutes);
 
 app.get("/api/health", (_req: Request, res: Response): void => {
