@@ -12,8 +12,8 @@ export const AppDataSource = new DataSource({
     logging: false,
     entities: [User],
     extra: {
-        authPlugins: {
-            caching_sha2_password: () => require("mysql2/lib/auth_plugins/caching_sha2_password"),
-        }
-    }
+        socketPath: null,
+        ssl: false,
+    },
+    connectorPackage: "mysql2"
 });
